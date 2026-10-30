@@ -1,4 +1,4 @@
-#🔍 REVELIO
+##🔍 REVELIO
 AI-Powered Deepfake Detection & Media Authentication System
 
 <p align="center">
