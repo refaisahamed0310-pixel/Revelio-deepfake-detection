@@ -1,0 +1,42 @@
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+env/
+.conda/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+temp/
+tmp/
+
+# Sensitive credentials
+.env
+.env.*
+!.env.example
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Large video models
+deepfake_video_model.h5
+deepfake_video_model_v2.h5
+deepfake_video_model_v2(val).h5
+
+# Dataset files
+dataset/
+clean_dataset/
+
+# OS files
+.DS_Store
+Thumbs.db
