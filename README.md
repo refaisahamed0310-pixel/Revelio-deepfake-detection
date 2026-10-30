@@ -1,4 +1,4 @@
-# VERIDECT — AI Media Authentication System
+# REVELIO — AI Media Authentication System
 
 > A professional deepfake detection desktop application built with Python, TensorFlow, OpenCV, and KivyMD.
 
