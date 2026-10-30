@@ -326,10 +326,8 @@ Contains the main artificial intelligence and computer vision functionality.
 ```text
 REVELIO/
 │
-├── main.py
-├── README.md
-├── requirements.txt
-├── .gitignore
+├── assets/
+│   └── screenshots/
 │
 ├── core/
 │   ├── __init__.py
@@ -338,17 +336,11 @@ REVELIO/
 │   ├── image_detector.py
 │   └── video_detector.py
 │
-├── utils/
-│   ├── __init__.py
-│   ├── helpers.py
-│   └── database.py
-│
 ├── ui/
 │   ├── __init__.py
 │   ├── app.py
 │   ├── widgets.py
 │   ├── theme.py
-│   │
 │   └── screens/
 │       ├── __init__.py
 │       ├── splash_screen.py
@@ -356,11 +348,17 @@ REVELIO/
 │       ├── result_screen.py
 │       └── history_screen.py
 │
-├── models/
-│   └── README.md
+├── utils/
+│   ├── __init__.py
+│   ├── helpers.py
+│   └── database.py
 │
-└── assets/
-    └── screenshots/
+├── deepfake_efficientnetb0_best1.h5
+├── deepfake_efficientnetb0_final1.h5
+├── main.py
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
