@@ -425,18 +425,40 @@ python main.py
 
 ---
 
+
 ## 📸 Application Screenshots
 
-Actual application screenshots will be added to showcase the REVELIO interface and its main functionalities.
+Explore the REVELIO desktop application interface and its core functionalities through the screenshots below.
 
-| Application Screen | Description |
-|---|---|
-| Splash Screen | Application introduction ![REVELIO SPLASH](assets/screenshots/splash.png) 
-| Home | Application introduction ![REVELIO HOME](assets/screenshots/home.png) 
-| Image and Video Analysis | Image and Video analysis ![Image and Video Analysis](assets/screenshots/Analyzing.png)
-| Detection Results - AI | Prediction and confidence display ![Detection Results](assets/screenshots/result-AI.png)
-| Detection Results - REAL | Prediction and confidence display ![Detection Results](assets/screenshots/result-real.png)
-| Scan History | Previous analysis records ![Scan History](assets/screenshots/scan.png)
+### 1. Splash Screen
+<p align="center">
+  <img src="assets/screenshots/splash.png" alt="REVELIO Splash Screen" width="750">
+</p>
+
+### 2. Home Screen
+<p align="center">
+  <img src="assets/screenshots/home.png" alt="REVELIO Home Screen" width="750">
+</p>
+
+### 3. Image and Video Analysis
+<p align="center">
+  <img src="assets/screenshots/Analyzing.png" alt="REVELIO Image and Video Analysis" width="750">
+</p>
+
+### 4. Detection Results — AI Generated
+<p align="center">
+  <img src="assets/screenshots/result-AI.png" alt="REVELIO AI Generated Detection Result" width="750">
+</p>
+
+### 5. Detection Results — Real
+<p align="center">
+  <img src="assets/screenshots/result-real.png" alt="REVELIO Real Media Detection Result" width="750">
+</p>
+
+### 6. Scan History
+<p align="center">
+  <img src="assets/screenshots/scan.png" alt="REVELIO Scan History" width="750">
+</p>
 
 **Screenshots directory:**
 
