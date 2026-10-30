@@ -442,22 +442,22 @@ Explore the REVELIO desktop application interface and its core functionalities t
 
 ### 3. Image and Video Analysis
 <p align="center">
-  <img src="assets/screenshots/Analyzing.png" alt="REVELIO Image and Video Analysis" width="750">
+  <img src="assets/screenshots/Analyzing.png" alt="REVELIO Image and Video Analysis" width="450">
 </p>
 
 ### 4. Detection Results — AI Generated
 <p align="center">
-  <img src="assets/screenshots/result-AI.png" alt="REVELIO AI Generated Detection Result" width="750">
+  <img src="assets/screenshots/result-AI.png" alt="REVELIO AI Generated Detection Result" width="450">
 </p>
 
 ### 5. Detection Results — Real
 <p align="center">
-  <img src="assets/screenshots/result-real.png" alt="REVELIO Real Media Detection Result" width="750">
+  <img src="assets/screenshots/result-real.png" alt="REVELIO Real Media Detection Result" width="450">
 </p>
 
 ### 6. Scan History
 <p align="center">
-  <img src="assets/screenshots/scan.png" alt="REVELIO Scan History" width="750">
+  <img src="assets/screenshots/scan.png" alt="REVELIO Scan History" width="450">
 </p>
 
 **Screenshots directory:**
