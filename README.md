@@ -1,12 +1,17 @@
-# 🔍 REVELIO
-AI-Powered Deepfake Detection & Media Authentication System
+<h1 align="center">🔎 REVELIO</h1>
+
+<h3 align="center">
+  AI-Powered Deepfake Detection & Media Authentication System
+</h3>
 
 <p align="center">
-  Uncovering Digital Manipulation Through Artificial Intelligence
+  <em>Uncovering Digital Manipulation Through Artificial Intelligence</em>
 </p>
 
 <p align="center">
-  A deep learning-powered desktop application that analyzes images and videos to identify potentially manipulated and AI-generated media using computer vision and neural networks.
+  A deep learning-powered desktop application that analyzes images and videos
+  to identify potentially manipulated and AI-generated media using computer
+  vision and neural networks.
 </p>
 
 ---
