@@ -513,6 +513,5 @@ Interested in Artificial Intelligence, Machine Learning, Deep Learning, and Pyth
 
 <p align="center">
    REVELIO
-  
-  Exploring AI for a More Trustworthy Digital World.
+   Exploring AI for a More Trustworthy Digital World.
 </p>
