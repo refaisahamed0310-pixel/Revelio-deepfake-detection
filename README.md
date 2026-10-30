@@ -1,74 +1,423 @@
-# REVELIO — AI Media Authentication System
+# 🔍 REVELIO
+### AI-Powered Deepfake Detection & Media Authentication System
 
-> A professional deepfake detection desktop application built with Python, TensorFlow, OpenCV, and KivyMD.
+<p align="center">
+  **Uncovering Digital Manipulation Through Artificial Intelligence**
+</p>
+
+<p align="center">
+  A deep learning-powered desktop application that analyzes images and videos to identify potentially manipulated and AI-generated media using computer vision and neural networks.
+</p>
 
 ---
 
-## Overview
+## 📌 Overview
 
-VERIDECT is a fully offline AI-powered tool that analyses images and videos to determine whether they are **authentic** or **AI-generated deepfakes**. It is designed for media analysts, cybersecurity professionals, and AI/ML students.
+**REVELIO** is an AI-powered media authentication application developed to identify potentially manipulated images and videos using deep learning and computer vision techniques.
+
+As generative AI technologies continue to advance, distinguishing authentic digital content from AI-generated or manipulated media has become increasingly challenging.
+
+REVELIO addresses this challenge by integrating trained convolutional neural network models, facial analysis, image preprocessing, and video frame analysis into a unified desktop application.
+
+The application provides an interactive environment where users can upload images or videos, perform AI-based analysis, review prediction results, and access previous scans.
+
+**The primary goal is to explore how artificial intelligence can contribute to digital media verification and deepfake detection.**
 
 ---
 
-## Project Structure
+## ✨ Key Features
 
+| Feature | Description |
+|---|---|
+| 🖼️ Image Detection | Analyzes images to identify potentially manipulated or AI-generated content. |
+| 🎬 Video Detection | Analyzes sampled video frames using a dedicated trained model. |
+| 🧠 Deep Learning | Integrates trained CNN-based models for media classification. |
+| 👤 Face Detection | Detects and processes facial regions during image preprocessing. |
+| ⚙️ Image Preprocessing | Performs resizing, normalization, and image preparation. |
+| 🔬 Ensemble Image Analysis | Integrates two trained image detection models. |
+| 📊 Prediction Results | Displays classification verdicts and confidence information. |
+| 🗂️ Scan History | Maintains previous scan records using SQLite. |
+| 🖥️ Desktop Interface | Provides an interactive interface built with Kivy and KivyMD. |
+| 🔒 Local Inference | Designed for local model inference without requiring a cloud prediction service. |
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Deep Learning Framework | TensorFlow, Keras |
+| CNN Architectures | EfficientNetB0, MobileNetV2 |
+| Computer Vision | OpenCV |
+| Numerical Processing | NumPy |
+| Desktop Application | Kivy, KivyMD |
+| Database | SQLite |
+| Development Environment | VS Code, Jupyter Notebook |
+| Version Control | Git, GitHub |
+
+---
+
+## 🧠 Deep Learning Architecture
+
+REVELIO combines deep learning and computer vision techniques to analyze digital images and videos.
+
+### 1. Image Detection Models
+
+The image detection module integrates two trained image classification models.
+
+**Model architecture:**
+- EfficientNetB0-based CNN models
+- Transfer learning
+- Fine-tuning
+- Image preprocessing
+- Neural network-based classification
+
+**Trained model files:**
+
+```text
+deepfake_efficientnetb0_best1.h5
+deepfake_efficientnetb0_final1.h5
 ```
-veridect/
-├── main.py                        ← Entry point (run this)
-├── requirements.txt               ← Python dependencies
-├── deepfake_detector_finetuned_v3.h5  ← Your trained model (place here)
-├── scan_history.json              ← Auto-generated scan history
+
+The models are loaded through the centralized model-loading module and integrated into the image detection pipeline.
+
+### 2. Video Detection Model
+
+Video analysis uses a separate trained deep learning model.
+
+The video detection pipeline extracts selected frames from an input video and processes them for deepfake classification.
+
+**Model file:**
+
+```text
+deepfake_video_model_v2.h5
+```
+
+The video model is distributed separately because of its large file size.
+
+---
+
+## 📊 Dataset & Model Performance
+
+REVELIO uses a cleaned image dataset containing authentic and fake images for training and validation.
+
+### Dataset Distribution
+
+**Training Dataset**
+
+| Category | Images |
+|---|---:|
+| Fake | 2,879 |
+| Real | 2,916 |
+| **Total** | **5,795** |
+
+**Validation Dataset**
+
+| Category | Images |
+|---|---:|
+| Fake | 616 |
+| Real | 625 |
+| **Total** | **1,241** |
+
+### Overall Dataset Statistics
+
+| Category | Images |
+|---|---:|
+| Fake Images | 3,495 |
+| Real Images | 3,541 |
+| **Total Dataset** | **7,036** |
+
+### Training Configuration
+
+| Parameter | Configuration |
+|---|---|
+| Training Split | 80% |
+| Validation Split | 20% |
+| Input Image Size | 224 × 224 |
+| Batch Size | 16 |
+| Learning Rate (Fine-Tuning) | 0.00001 |
+| Training Approach | Transfer Learning & Fine-Tuning |
+| Framework | TensorFlow / Keras |
+
+### Model Performance
+
+**Best reported validation accuracy: 92.13%**
+
+The reported validation accuracy represents the project's best fine-tuned model result. It should be interpreted in the context of the specific training run and evaluation dataset.
+
+> Model performance on unseen datasets and real-world deepfakes may differ. Validation accuracy alone does not establish real-world detection reliability.
+
+---
+
+## 🏗️ System Architecture
+
+REVELIO follows a modular application architecture that separates the user interface, detection logic, and utility operations.
+
+```text
+                 ┌──────────────────────┐
+                 │   REVELIO DESKTOP    │
+                 │     APPLICATION     │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │    Kivy / KivyMD     │
+                 │     User Interface  │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │    Media Selection   │
+                 └──────────┬───────────┘
+                            │
+                   ┌────────┴────────┐
+                   │                 │
+                   ▼                 ▼
+             IMAGE INPUT        VIDEO INPUT
+                   │                 │
+                   ▼                 ▼
+             Face Detection     Frame Extraction
+                   │                 │
+                   ▼                 ▼
+             Preprocessing      Preprocessing
+                   │                 │
+                   ▼                 ▼
+            Image Detection    Video Detection
+                   │                 │
+                   ▼                 ▼
+             Image Models       Video Model
+                   │                 │
+                   └────────┬────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │  Prediction Results  │
+                 └──────────┬───────────┘
+                            │
+                   ┌────────┴────────┐
+                   │                 │
+                   ▼                 ▼
+              Result Screen     SQLite Database
+                                     │
+                                     ▼
+                                Scan History
+```
+
+---
+
+## 🔬 Detection Workflow
+
+### 🖼️ Image Detection Pipeline
+
+The image detection pipeline analyzes uploaded images through facial preprocessing and trained neural network models.
+
+```text
+       Image Selection
+              │
+              ▼
+       Image Loading
+              │
+              ▼
+        Face Detection
+              │
+        ┌─────┴─────┐
+        │           │
+        ▼           ▼
+    Face Found   No Face Found
+        │           │
+        ▼           ▼
+    Face Crop    Full Image
+        │           │
+        └─────┬─────┘
+              │
+              ▼
+       Image Resizing
+          224 × 224
+              │
+              ▼
+        Normalization
+              │
+              ▼
+       Trained CNN Models
+              │
+              ▼
+       Prediction Processing
+              │
+              ▼
+       Authenticity Result
+```
+
+### 🎬 Video Detection Pipeline
+
+The video detection pipeline uses frame extraction and a dedicated trained model to analyze video content.
+
+```text
+        Video Selection
+               │
+               ▼
+        OpenCV VideoCapture
+               │
+               ▼
+        Frame Extraction
+               │
+               ▼
+        Frame Preprocessing
+               │
+               ▼
+        Deep Learning Model
+               │
+               ▼
+        Frame Predictions
+               │
+               ▼
+        Prediction Aggregation
+               │
+               ▼
+        Final Video Result
+```
+
+---
+
+## 🖥️ Application Modules
+
+REVELIO is organized into three primary functional modules.
+
+### 1. User Interface Module
+
+Built using Kivy and KivyMD.
+
+| Component | Responsibility |
+|---|---|
+| Splash Screen | Application initialization and introduction |
+| Analyze Screen | Image and video selection and analysis |
+| Result Screen | Displays detection results |
+| History Screen | Displays previous scans |
+| Widgets | Reusable interface components |
+| Theme | Application appearance and styling |
+
+### 2. Core Detection Module
+
+Contains the main artificial intelligence and computer vision functionality.
+
+| File | Responsibility |
+|---|---|
+| `model_loader.py` | Loads trained models and handles model initialization |
+| `image_detector.py` | Implements the image detection pipeline |
+| `video_detector.py` | Implements video analysis |
+| `face_utils.py` | Face detection and facial image preprocessing |
+
+### 3. Utility Module
+
+| File | Responsibility |
+|---|---|
+| `helpers.py` | Common application helper functions |
+| `database.py` | SQLite database operations |
+
+---
+
+## 📁 Project Structure
+
+```text
+REVELIO/
 │
-├── core/                          ← Business logic layer
-│   ├── __init__.py
-│   ├── model_loader.py            ← TF model loading & inference
-│   ├── face_utils.py              ← Haar Cascade face detection
-│   ├── image_detector.py          ← Image detection pipeline
-│   └── video_detector.py          ← Video detection pipeline
+├── main.py
+├── README.md
+├── requirements.txt
+├── .gitignore
 │
-├── ui/                            ← UI layer
+├── core/
 │   ├── __init__.py
-│   ├── app.py                     ← KivyMD app class, theme, navigation
-│   ├── widgets.py                 ← Custom widgets: ConfidenceArc, VerdictBadge
+│   ├── model_loader.py
+│   ├── face_utils.py
+│   ├── image_detector.py
+│   └── video_detector.py
+│
+├── utils/
+│   ├── __init__.py
+│   ├── helpers.py
+│   └── database.py
+│
+├── ui/
+│   ├── __init__.py
+│   ├── app.py
+│   ├── widgets.py
+│   ├── theme.py
+│   │
 │   └── screens/
 │       ├── __init__.py
-│       ├── analyze_screen.py      ← Main detection screen
-│       └── history_screen.py      ← Scan history screen
+│       ├── splash_screen.py
+│       ├── analyze_screen.py
+│       ├── result_screen.py
+│       └── history_screen.py
 │
-└── utils/
-    ├── __init__.py
-    └── helpers.py                 ← File metadata, history persistence
+├── models/
+│   └── README.md
+│
+└── assets/
+    └── screenshots/
 ```
 
 ---
 
-## Setup
+## ⚙️ Installation & Setup
 
-### 1. Prerequisites
+### Prerequisites
 
-- **Python 3.9+** (3.10 or 3.11 recommended)
-- **pip**
+- Python 3.10 recommended
+- pip package manager
+- Windows or another supported desktop operating system
+- Sufficient RAM and storage for deep learning inference
 
-### 2. Install dependencies
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/refaisahamed0310-pixel/Revelio-deepfake-detection.git
+```
+
+### Step 2: Navigate to the Project Directory
+
+```bash
+cd Revelio-deepfake-detection
+```
+
+### Step 3: Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Step 4: Activate the Environment
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### Step 5: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> **Windows users:** If you get OpenGL errors, install `kivy[full]` instead of plain `kivy`.
+### Step 6: Configure the Trained Models
 
-### 3. Place your model
+Place the required trained model files in the project root directory.
 
-Copy your trained model into the project root:
-
+```text
+REVELIO/
+│
+├── deepfake_efficientnetb0_best1.h5
+├── deepfake_efficientnetb0_final1.h5
+└── deepfake_video_model_v2.h5
 ```
-veridect/
-└── deepfake_detector_finetuned_v3.h5   ← here
-```
 
-If the model file is absent, the app runs in **DEMO mode** — it still functions fully but uses random predictions.
+The large video model is distributed separately and must be obtained before running the complete video detection pipeline.
 
-### 4. Launch
+Refer to the model documentation for model download and setup instructions.
+
+### Step 7: Launch REVELIO
 
 ```bash
 python main.py
@@ -76,156 +425,71 @@ python main.py
 
 ---
 
-## Model Specification
+## 📸 Application Screenshots
 
-| Property      | Value                     |
-|---------------|---------------------------|
-| Architecture  | MobileNetV2-based CNN     |
-| Input size    | 160 × 160 RGB             |
-| Output        | Probability in `[0.0, 1.0]` |
-| Threshold     | `>= 0.6` → **AI GENERATED** |
-|               | `< 0.6`  → **REAL**       |
+Actual application screenshots will be added to showcase the REVELIO interface and its main functionalities.
 
----
+| Application Screen | Description |
+|---|---|
+| Home / Splash Screen | Application introduction |
+| Image Analysis | Image selection and analysis |
+| Video Analysis | Video selection and processing |
+| Detection Results | Prediction and confidence display |
+| Scan History | Previous analysis records |
 
-## Detection Pipelines
+**Screenshots directory:**
 
-### Image Pipeline
-```
-Load image (OpenCV)
-    │
-    ▼
-Face Detection (Haar Cascade)
-    ├── Face found → crop face region + padding
-    └── No face   → use full image
-    │
-    ▼
-Resize to 160×160
-Normalize to [0.0, 1.0]
-    │
-    ▼
-Model Inference → probability score
-    │
-    ▼
-probability >= 0.6 → AI GENERATED
-probability  < 0.6 → REAL
-```
-
-### Video Pipeline
-```
-Open video (OpenCV VideoCapture)
-    │
-    ▼
-Sample every N frames (configurable, default: 10)
-    │
-    ▼
-Run Image Pipeline on each sampled frame
-    │
-    ▼
-Collect per-frame probability scores
-    │
-    ▼
-Average scores → final probability
-    │
-    ▼
-Apply threshold → final verdict
+```text
+assets/screenshots/
 ```
 
 ---
 
-## Screens
+## ⚠️ Limitations
 
-### ANALYZE Screen
-- **Upload zone** — click or browse to select an image or video
-- **Preview card** — thumbnail, filename, dimensions, size, duration
-- **Settings panel** — face detection toggle, frame interval slider (video)
-- **SCAN button** — starts analysis in a background thread
-- **Progress bar** — shows real-time progress for video scans
-- **Results card** — verdict, confidence bar, raw probability, arc gauge
-
-### HISTORY Screen
-- Scrollable table of all past scans
-- Colour-coded rows: green (REAL), red (AI GENERATED)
-- Columns: filename, verdict, confidence, timestamp
-- Clear all history button
+- Detection accuracy depends on the quality and diversity of training data.
+- Previously unseen deepfake generation techniques may affect model reliability.
+- Face detection may be affected by lighting, facial angles, and occlusion.
+- Video analysis depends on frame sampling and video quality.
+- AI predictions should not be treated as definitive proof of media authenticity.
 
 ---
 
-## Status Indicator
+## 🔮 Future Enhancements
 
-The header shows the current model state:
-
-| Status       | Meaning                              |
-|--------------|--------------------------------------|
-| 🟡 INITIALIZING | App is starting                    |
-| 🟢 MODEL READY  | Model loaded successfully          |
-| 🟡 DEMO MODE    | Model file not found — random predictions |
-| 🔴 MODEL ERROR  | Model failed to load               |
-
----
-
-## Customisation
-
-### Change the detection threshold
-
-In `core/model_loader.py`:
-```python
-FAKE_THRESHOLD = 0.6   # Change to your desired threshold
-```
-
-### Use a different model
-
-In `core/model_loader.py`:
-```python
-MODEL_FILENAME = 'your_model.h5'
-```
-
-### Change frame sampling rate
-
-Either use the slider in the UI, or change the default in `core/video_detector.py`:
-```python
-def detect_video(video_path, frame_interval=10, ...):
-```
-
-### Enable MediaPipe face detection (optional)
-
-1. `pip install mediapipe`
-2. In `core/face_utils.py`, replace the Haar Cascade detector with the MediaPipe face mesh / detection pipeline. The `detect_and_crop_face()` function signature stays the same.
+- Android application integration.
+- Improved facial detection and tracking.
+- Expanded and more diverse training datasets.
+- Enhanced detection against emerging deepfake generation techniques.
+- Optimized inference for systems with limited hardware resources.
+- More comprehensive video frame-level analysis.
+- Improved visualization and reporting of detection results.
 
 ---
 
-## Architecture Notes
+## 🎯 Project Objective
 
-The code is split into three distinct layers with no circular imports:
+The primary objective of REVELIO is to explore the practical application of artificial intelligence, deep learning, and computer vision in digital media authentication.
 
-```
-utils/  ──────────────────────────────────────────┐
-  helpers.py  (file I/O, metadata, history)        │
-                                                   │
-core/  ──────────────────────────────────────────  │
-  model_loader.py  (TF model, inference)           │
-  face_utils.py    (OpenCV face detection)  ←──────┤ no UI imports
-  image_detector.py (full image pipeline)          │
-  video_detector.py (full video pipeline)          │
-                                                   │
-ui/  ────────────────────────────────────────────  │
-  app.py                                           │
-  widgets.py                                       │
-  screens/                                    imports core + utils
-    analyze_screen.py
-    history_screen.py
-```
+By integrating trained neural network models with an interactive desktop application, the project demonstrates an end-to-end approach to detecting potentially manipulated images and videos.
 
 ---
 
-## Known Limitations
+## 👨‍💻 Developer
 
-- Face detection uses OpenCV Haar Cascade which may miss faces at extreme angles. For higher accuracy, replace with MediaPipe or MTCNN.
-- Video analysis is single-threaded; for very long videos, increase `frame_interval` or `max_frames`.
-- The model accuracy depends entirely on your training data and the provided `.h5` file.
+**Ahamed Refai S**
+
+B.Sc. Computer Science | AI & Machine Learning Enthusiast
+
+Interested in Artificial Intelligence, Machine Learning, Deep Learning, and Python Development.
+
+- **GitHub:** [refaisahamed0310-pixel](https://github.com/refaisahamed0310-pixel)
+- **LinkedIn:** [Ahamed Refai](https://www.linkedin.com/in/ahamed-refai-s-6775b2310/)
 
 ---
 
-## License
-
-For academic / portfolio use. Replace this section with your actual license.
+<p align="center">
+  **REVELIO**
+  
+  *Exploring AI for a More Trustworthy Digital World.*
+</p>
