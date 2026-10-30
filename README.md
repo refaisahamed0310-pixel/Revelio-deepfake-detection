@@ -1,8 +1,8 @@
-# 🔍 REVELIO
-### AI-Powered Deepfake Detection & Media Authentication System
+🔍 REVELIO
+AI-Powered Deepfake Detection & Media Authentication System
 
 <p align="center">
-  **Uncovering Digital Manipulation Through Artificial Intelligence**
+  Uncovering Digital Manipulation Through Artificial Intelligence
 </p>
 
 <p align="center">
@@ -11,9 +11,9 @@
 
 ---
 
-## 📌 Overview
+📌 Overview
 
-**REVELIO** is an AI-powered media authentication application developed to identify potentially manipulated images and videos using deep learning and computer vision techniques.
+REVELIO is an AI-powered media authentication application developed to identify potentially manipulated images and videos using deep learning and computer vision techniques.
 
 As generative AI technologies continue to advance, distinguishing authentic digital content from AI-generated or manipulated media has become increasingly challenging.
 
@@ -21,11 +21,11 @@ REVELIO addresses this challenge by integrating trained convolutional neural net
 
 The application provides an interactive environment where users can upload images or videos, perform AI-based analysis, review prediction results, and access previous scans.
 
-**The primary goal is to explore how artificial intelligence can contribute to digital media verification and deepfake detection.**
+The primary goal is to explore how artificial intelligence can contribute to digital media verification and deepfake detection.
 
 ---
 
-## ✨ Key Features
+✨ Key Features
 
 | Feature | Description |
 |---|---|
@@ -42,7 +42,7 @@ The application provides an interactive environment where users can upload image
 
 ---
 
-## 🛠️ Technology Stack
+🛠️ Technology Stack
 
 | Category | Technologies |
 |---|---|
@@ -58,22 +58,22 @@ The application provides an interactive environment where users can upload image
 
 ---
 
-## 🧠 Deep Learning Architecture
+🧠 Deep Learning Architecture
 
 REVELIO combines deep learning and computer vision techniques to analyze digital images and videos.
 
-### 1. Image Detection Models
+1. Image Detection Models
 
 The image detection module integrates two trained image classification models.
 
-**Model architecture:**
+Model architecture:
 - EfficientNetB0-based CNN models
 - Transfer learning
 - Fine-tuning
 - Image preprocessing
 - Neural network-based classification
 
-**Trained model files:**
+Trained model files:
 
 ```text
 deepfake_efficientnetb0_best1.h5
@@ -82,13 +82,13 @@ deepfake_efficientnetb0_final1.h5
 
 The models are loaded through the centralized model-loading module and integrated into the image detection pipeline.
 
-### 2. Video Detection Model
+2. Video Detection Model
 
 Video analysis uses a separate trained deep learning model.
 
 The video detection pipeline extracts selected frames from an input video and processes them for deepfake classification.
 
-**Model file:**
+Model file:
 
 ```text
 deepfake_video_model_v2.h5
@@ -98,37 +98,37 @@ The video model is distributed separately because of its large file size.
 
 ---
 
-## 📊 Dataset & Model Performance
+📊 Dataset & Model Performance
 
 REVELIO uses a cleaned image dataset containing authentic and fake images for training and validation.
 
-### Dataset Distribution
+Dataset Distribution
 
-**Training Dataset**
+Training Dataset
 
 | Category | Images |
 |---|---:|
 | Fake | 2,879 |
 | Real | 2,916 |
-| **Total** | **5,795** |
+| Total | 5,795 |
 
-**Validation Dataset**
+Validation Dataset
 
 | Category | Images |
 |---|---:|
 | Fake | 616 |
 | Real | 625 |
-| **Total** | **1,241** |
+| **Total** | 1,241 |
 
-### Overall Dataset Statistics
+Overall Dataset Statistics
 
 | Category | Images |
 |---|---:|
 | Fake Images | 3,495 |
 | Real Images | 3,541 |
-| **Total Dataset** | **7,036** |
+| Total Dataset | 7,036 |
 
-### Training Configuration
+Training Configuration
 
 | Parameter | Configuration |
 |---|---|
@@ -140,9 +140,9 @@ REVELIO uses a cleaned image dataset containing authentic and fake images for tr
 | Training Approach | Transfer Learning & Fine-Tuning |
 | Framework | TensorFlow / Keras |
 
-### Model Performance
+Model Performance
 
-**Best reported validation accuracy: 92.13%**
+Best reported validation accuracy: 92.13%
 
 The reported validation accuracy represents the project's best fine-tuned model result. It should be interpreted in the context of the specific training run and evaluation dataset.
 
@@ -150,7 +150,7 @@ The reported validation accuracy represents the project's best fine-tuned model 
 
 ---
 
-## 🏗️ System Architecture
+🏗️ System Architecture
 
 REVELIO follows a modular application architecture that separates the user interface, detection logic, and utility operations.
 
@@ -206,9 +206,9 @@ REVELIO follows a modular application architecture that separates the user inter
 
 ---
 
-## 🔬 Detection Workflow
+🔬 Detection Workflow
 
-### 🖼️ Image Detection Pipeline
+🖼️ Image Detection Pipeline
 
 The image detection pipeline analyzes uploaded images through facial preprocessing and trained neural network models.
 
@@ -248,7 +248,7 @@ The image detection pipeline analyzes uploaded images through facial preprocessi
        Authenticity Result
 ```
 
-### 🎬 Video Detection Pipeline
+🎬 Video Detection Pipeline
 
 The video detection pipeline uses frame extraction and a dedicated trained model to analyze video content.
 
@@ -279,11 +279,11 @@ The video detection pipeline uses frame extraction and a dedicated trained model
 
 ---
 
-## 🖥️ Application Modules
+🖥️ Application Modules
 
 REVELIO is organized into three primary functional modules.
 
-### 1. User Interface Module
+1. User Interface Module
 
 Built using Kivy and KivyMD.
 
@@ -296,7 +296,7 @@ Built using Kivy and KivyMD.
 | Widgets | Reusable interface components |
 | Theme | Application appearance and styling |
 
-### 2. Core Detection Module
+2. Core Detection Module
 
 Contains the main artificial intelligence and computer vision functionality.
 
@@ -307,7 +307,7 @@ Contains the main artificial intelligence and computer vision functionality.
 | `video_detector.py` | Implements video analysis |
 | `face_utils.py` | Face detection and facial image preprocessing |
 
-### 3. Utility Module
+3. Utility Module
 
 | File | Responsibility |
 |---|---|
@@ -316,7 +316,7 @@ Contains the main artificial intelligence and computer vision functionality.
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
 
 ```text
 REVELIO/
@@ -360,48 +360,48 @@ REVELIO/
 
 ---
 
-## ⚙️ Installation & Setup
+⚙️ Installation & Setup
 
-### Prerequisites
+ Prerequisites
 
 - Python 3.10 recommended
 - pip package manager
 - Windows or another supported desktop operating system
 - Sufficient RAM and storage for deep learning inference
 
-### Step 1: Clone the Repository
+Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/refaisahamed0310-pixel/Revelio-deepfake-detection.git
 ```
 
-### Step 2: Navigate to the Project Directory
+Step 2: Navigate to the Project Directory
 
 ```bash
 cd Revelio-deepfake-detection
 ```
 
-### Step 3: Create a Virtual Environment
+Step 3: Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Step 4: Activate the Environment
+Step 4: Activate the Environment
 
-**Windows:**
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Step 5: Install Dependencies
+Step 5: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 6: Configure the Trained Models
+Step 6: Configure the Trained Models
 
 Place the required trained model files in the project root directory.
 
@@ -417,7 +417,7 @@ The large video model is distributed separately and must be obtained before runn
 
 Refer to the model documentation for model download and setup instructions.
 
-### Step 7: Launch REVELIO
+Step 7: Launch REVELIO
 
 ```bash
 python main.py
@@ -426,41 +426,41 @@ python main.py
 ---
 
 
-## 📸 Application Screenshots
+📸 Application Screenshots
 
 Explore the REVELIO desktop application interface and its core functionalities through the screenshots below.
 
-### 1. Splash Screen
+1. Splash Screen
 <p align="center">
   <img src="assets/screenshots/splash.png" alt="REVELIO Splash Screen" width="400">
 </p>
 
-### 2. Home Screen
+2. Home Screen
 <p align="center">
   <img src="assets/screenshots/home.png" alt="REVELIO Home Screen" width="400">
 </p>
 
-### 3. Image and Video Analysis
+3. Image and Video Analysis
 <p align="center">
   <img src="assets/screenshots/Analyzing.png" alt="REVELIO Image and Video Analysis" width="400">
 </p>
 
-### 4. Detection Results — AI Generated
+4. Detection Results — AI Generated
 <p align="center">
   <img src="assets/screenshots/result-AI.png" alt="REVELIO AI Generated Detection Result" width="400">
 </p>
 
-### 5. Detection Results — Real
+5. Detection Results — Real
 <p align="center">
   <img src="assets/screenshots/result-real.png" alt="REVELIO Real Media Detection Result" width="400">
 </p>
 
-### 6. Scan History
+6. Scan History
 <p align="center">
   <img src="assets/screenshots/scan.png" alt="REVELIO Scan History" width="400">
 </p>
 
-**Screenshots directory:**
+Screenshots directory:
 
 ```text
 assets/screenshots/
@@ -468,7 +468,7 @@ assets/screenshots/
 
 ---
 
-## ⚠️ Limitations
+⚠️ Limitations
 
 - Detection accuracy depends on the quality and diversity of training data.
 - Previously unseen deepfake generation techniques may affect model reliability.
@@ -478,7 +478,7 @@ assets/screenshots/
 
 ---
 
-## 🔮 Future Enhancements
+🔮 Future Enhancements
 
 - Android application integration.
 - Improved facial detection and tracking.
@@ -490,7 +490,7 @@ assets/screenshots/
 
 ---
 
-## 🎯 Project Objective
+🎯 Project Objective
 
 The primary objective of REVELIO is to explore the practical application of artificial intelligence, deep learning, and computer vision in digital media authentication.
 
@@ -498,21 +498,21 @@ By integrating trained neural network models with an interactive desktop applica
 
 ---
 
-## 👨‍💻 Developer
+👨‍💻 Developer
 
-**Ahamed Refai S**
+Ahamed Refai S
 
 B.Sc. Computer Science | AI & Machine Learning Enthusiast
 
 Interested in Artificial Intelligence, Machine Learning, Deep Learning, and Python Development.
 
-- **GitHub:** [refaisahamed0310-pixel](https://github.com/refaisahamed0310-pixel)
-- **LinkedIn:** [Ahamed Refai](https://www.linkedin.com/in/ahamed-refai-s-6775b2310/)
+- GitHub: [refaisahamed0310-pixel](https://github.com/refaisahamed0310-pixel)
+- LinkedIn: [Ahamed Refai](https://www.linkedin.com/in/ahamed-refai-s-6775b2310/)
 
 ---
 
 <p align="center">
-  **REVELIO**
+   REVELIO
   
-  *Exploring AI for a More Trustworthy Digital World.*
+  Exploring AI for a More Trustworthy Digital World.
 </p>
