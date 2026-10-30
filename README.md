@@ -1,4 +1,4 @@
-##🔍 REVELIO
+# 🔍 REVELIO
 AI-Powered Deepfake Detection & Media Authentication System
 
 <p align="center">
@@ -11,7 +11,7 @@ AI-Powered Deepfake Detection & Media Authentication System
 
 ---
 
-#📌 Overview
+# 📌 Overview
 
 REVELIO is an AI-powered media authentication application developed to identify potentially manipulated images and videos using deep learning and computer vision techniques.
 
@@ -25,7 +25,7 @@ The primary goal is to explore how artificial intelligence can contribute to dig
 
 ---
 
-#✨ Key Features
+# ✨ Key Features
 
 | Feature | Description |
 |---|---|
@@ -42,7 +42,7 @@ The primary goal is to explore how artificial intelligence can contribute to dig
 
 ---
 
-#🛠️ Technology Stack
+# 🛠️ Technology Stack
 
 | Category | Technologies |
 |---|---|
@@ -58,7 +58,7 @@ The primary goal is to explore how artificial intelligence can contribute to dig
 
 ---
 
-#🧠 Deep Learning Architecture
+# 🧠 Deep Learning Architecture
 
 REVELIO combines deep learning and computer vision techniques to analyze digital images and videos.
 
@@ -98,7 +98,7 @@ The video model is distributed separately because of its large file size.
 
 ---
 
-#📊 Dataset & Model Performance
+# 📊 Dataset & Model Performance
 
 REVELIO uses a cleaned image dataset containing authentic and fake images for training and validation.
 
@@ -150,7 +150,7 @@ The reported validation accuracy represents the project's best fine-tuned model 
 
 ---
 
-#🏗️ System Architecture
+# 🏗️ System Architecture
 
 REVELIO follows a modular application architecture that separates the user interface, detection logic, and utility operations.
 
@@ -206,9 +206,9 @@ REVELIO follows a modular application architecture that separates the user inter
 
 ---
 
-#🔬 Detection Workflow
+# 🔬 Detection Workflow
 
-#🖼️ Image Detection Pipeline
+# 🖼️ Image Detection Pipeline
 
 The image detection pipeline analyzes uploaded images through facial preprocessing and trained neural network models.
 
@@ -248,7 +248,7 @@ The image detection pipeline analyzes uploaded images through facial preprocessi
        Authenticity Result
 ```
 
-#🎬 Video Detection Pipeline
+# 🎬 Video Detection Pipeline
 
 The video detection pipeline uses frame extraction and a dedicated trained model to analyze video content.
 
@@ -279,7 +279,7 @@ The video detection pipeline uses frame extraction and a dedicated trained model
 
 ---
 
-🖥️ Application Modules
+# 🖥️ Application Modules
 
 REVELIO is organized into three primary functional modules.
 
@@ -316,7 +316,7 @@ Contains the main artificial intelligence and computer vision functionality.
 
 ---
 
-📁 Project Structure
+# 📁 Project Structure
 
 ```text
 REVELIO/
@@ -360,7 +360,7 @@ REVELIO/
 
 ---
 
-⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 
  Prerequisites
 
@@ -426,7 +426,7 @@ python main.py
 ---
 
 
-📸 Application Screenshots
+# 📸 Application Screenshots
 
 Explore the REVELIO desktop application interface and its core functionalities through the screenshots below.
 
@@ -468,7 +468,7 @@ assets/screenshots/
 
 ---
 
-⚠️ Limitations
+# ⚠️ Limitations
 
 - Detection accuracy depends on the quality and diversity of training data.
 - Previously unseen deepfake generation techniques may affect model reliability.
@@ -478,7 +478,7 @@ assets/screenshots/
 
 ---
 
-🔮 Future Enhancements
+# 🔮 Future Enhancements
 
 - Android application integration.
 - Improved facial detection and tracking.
@@ -490,7 +490,7 @@ assets/screenshots/
 
 ---
 
-🎯 Project Objective
+# 🎯 Project Objective
 
 The primary objective of REVELIO is to explore the practical application of artificial intelligence, deep learning, and computer vision in digital media authentication.
 
@@ -498,7 +498,7 @@ By integrating trained neural network models with an interactive desktop applica
 
 ---
 
-👨‍💻 Developer
+# 👨‍💻 Developer
 
 Ahamed Refai S
 
