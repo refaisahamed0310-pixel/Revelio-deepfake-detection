@@ -208,7 +208,7 @@ REVELIO follows a modular application architecture that separates the user inter
 
 # 🔬 Detection Workflow
 
-# 🖼️ Image Detection Pipeline
+## 🖼️ Image Detection Pipeline
 
 The image detection pipeline analyzes uploaded images through facial preprocessing and trained neural network models.
 
@@ -248,7 +248,7 @@ The image detection pipeline analyzes uploaded images through facial preprocessi
        Authenticity Result
 ```
 
-# 🎬 Video Detection Pipeline
+## 🎬 Video Detection Pipeline
 
 The video detection pipeline uses frame extraction and a dedicated trained model to analyze video content.
 
